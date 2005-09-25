@@ -1,0 +1,55 @@
+diff -Nur udpcast/Makefile udpcast.n/Makefile
+--- udpcast/Makefile	2005-02-06 18:14:54.000000000 +0100
++++ udpcast.n/Makefile	2005-09-25 21:14:25.139036328 +0200
+@@ -1,8 +1,8 @@
+ DESTDIR =
+ 
+ #CFLAGS = -O4 -Wall -DNDEBUG -DLOSSTEST
+-CFLAGS =-Wall -Wshadow -DBB_FEATURE_UDPCAST_FEC -D_FILE_OFFSET_BITS=64 -DUSE_SYSLOG
+-LDFLAGS =-s -Wl,-warn-common
++override CFLAGS +=-Wall -Wshadow -DBB_FEATURE_UDPCAST_FEC -D_FILE_OFFSET_BITS=64 -DUSE_SYSLOG
++override LDFLAGS += -Wl,-warn-common
+ LIBS=-lpthread
+ BUSYBOX=../udp-busybox/busybox
+ BBTARGET=$(BUSYBOX)/udpcast
+@@ -10,11 +10,11 @@
+ ARCH = $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ -e s/arm.*/arm/ -e s/sa110/arm/)
+ 
+ ifeq ($(ARCH),i386)
+-CFLAGS += -DARCH_X86
++override CFLAGS += -DARCH_X86
+ endif
+ 
+ 
+-CFLAGS += -DNO_BB
++override CFLAGS += -DNO_BB
+ 
+ all: udp-receiver udp-sender udp-receiver.1 udp-sender.1
+ #all: fec-test
+@@ -36,22 +36,22 @@
+ 	sender-diskio.o senddata.o udps-negotiate.o \
+ 	fifo.o produconsum.o participants.o log.o statistics.o \
+ 	fec.o udpc_version.o console.o
+-	gcc $(LDFLAGS) $^ -lpthread -o $@
++	$(CC) $(LDFLAGS) $^ -lpthread -o $@
+ 
+ 
+ udp-receiver: udp-receiver.o socklib.o udpcast.o \
+ 	receiver-diskio.o receivedata.o udpr-negotiate.o produconsum.o \
+ 	fifo.o log.o statistics.o fec.o udpc_version.o console.o
+-	gcc $(LDFLAGS) $^ -lpthread -o $@
++	$(CC) $(LDFLAGS) $^ -lpthread -o $@
+ 
+ udp-receiver.1 udp-sender.1: html2man.pl cmd.html 
+ 	perl $< $^
+ 
+ fec-test: fec-test.o
+-	gcc $(LDFLAGS) $^ -o $@
++	$(CC) $(LDFLAGS) $^ -o $@
+ 
+ fec.o: fec.c
+-	gcc -c $(CFLAGS) -fno-inline $<
++	$(CC) -c $(CFLAGS) -fno-inline $<
+ 
+ 
+ bbcopy: $(BBTARGET) \
