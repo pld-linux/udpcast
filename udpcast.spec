@@ -6,6 +6,7 @@ License:	GPL v2 for main code, BSD-like for fec.c
 Group:		Networking
 # only working, recent url that i've found ;)
 Source0:	http://gentoo.nedlinux.nl/distfiles/%{name}-%{version}.tar.gz
+# Source0-md5:	8165440ba93e2b0ec8150926c3787dd1
 URL:		http://udpcast.linux.lu/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
