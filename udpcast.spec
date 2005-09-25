@@ -4,9 +4,9 @@ Version:	20050226
 Release:	0.1
 License:	GPL v2 for main code, BSD-like for fec.c
 Group:		Networking
-# only working, recent url that i've found ;)
-Source0:	http://gentoo.nedlinux.nl/distfiles/%{name}-%{version}.tar.gz
+Source0:	http://udpcast.linux.lu/current/%{name}-%{version}.tar.gz
 # Source0-md5:	8165440ba93e2b0ec8150926c3787dd1
+Patch0:		%{name}-Makefile.patch
 URL:		http://udpcast.linux.lu/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -20,9 +20,10 @@ it would to install just 2.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
-%{__make}
+%{__make} CC="%{__cc}" CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
