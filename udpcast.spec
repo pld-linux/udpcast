@@ -8,6 +8,7 @@ Source0:	http://udpcast.linux.lu/current/%{name}-%{version}.tar.gz
 # Source0-md5:	8165440ba93e2b0ec8150926c3787dd1
 Patch0:		%{name}-Makefile.patch
 URL:		http://udpcast.linux.lu/
+BuildRequires:	perl-tools-pod
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
