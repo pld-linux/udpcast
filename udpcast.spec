@@ -21,12 +21,12 @@ multicast abilities: it won't take longer to install 15 machines than
 it would to install just 2.
 
 %description -l pl
-UDPcast jest narzêdziem do przesy³ania danych jednoczesnie do wielu 
+UDPcast jest narzêdziem do przesy³ania danych jednocze¶nie do wielu 
 lokalizacji w sieci LAN. Przyk³adowo do instalacji oprogramowania
-w ca³ej pracowni komputerowej za jednym razem. Przewaga UDPcast
-w porównaniu do innych sposobów  (nfs, ftp czy te¿ innych) jest to, 
-i¿ wykorzystuje mo¿lwo¶æi transmisji multicast - instalacja 15 stacji
-roboczych nie powinna zaj±æ wiêcej ni¿ 2.
+w ca³ej pracowni komputerowej za jednym razem. Przewag± UDPcast
+w porównaniu do innych sposobów (nfs, ftp czy te¿ innych) jest to, 
+i¿ wykorzystuje mo¿ilwo¶æi transmisji multicast - instalacja 15 
+stacji roboczych nie powinna zaj±æ wiêcej ni¿ 2.
 
 %prep
 %setup -q -n %{name}
