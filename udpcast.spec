@@ -16,16 +16,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 UDPcast is a file transfer tool that can send data simultaneously to
 many destinations on a LAN. This can for instance be used to install
 entire classrooms of PC's at once. The advantage of UDPcast over using
-other methods (nfs, ftp, whatever) is that UDPcast uses Ethernet's
+other methods (NFS, FTP, whatever) is that UDPcast uses Ethernet's
 multicast abilities: it won't take longer to install 15 machines than
 it would to install just 2.
 
 %description -l pl
-UDPcast jest narzêdziem do przesy³ania danych jednocze¶nie do wielu 
-lokalizacji w sieci LAN. Przyk³adowo do instalacji oprogramowania
+UDPcast jest narzêdziem do przesy³ania danych jednocze¶nie do wielu
+lokalizacji w sieci LAN, przyk³adowo do instalacji oprogramowania
 w ca³ej pracowni komputerowej za jednym razem. Przewag± UDPcast
-w porównaniu do innych sposobów (nfs, ftp czy te¿ innych) jest to, 
-i¿ wykorzystuje mo¿ilwo¶æi transmisji multicast - instalacja 15 
+w porównaniu do innych sposobów (NFS, FTP czy te¿ innych) jest to,
+i¿ wykorzystuje mo¿ilwo¶æ transmisji multicast - instalacja 15
 stacji roboczych nie powinna zaj±æ wiêcej ni¿ 2.
 
 %prep
@@ -33,7 +33,9 @@ stacji roboczych nie powinna zaj±æ wiêcej ni¿ 2.
 %patch0 -p1
 
 %build
-%{__make} CC="%{__cc}" CFLAGS="%{rpmcflags}"
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
