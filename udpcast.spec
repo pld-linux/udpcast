@@ -25,7 +25,7 @@ UDPcast jest narzêdziem do przesy³ania danych jednocze¶nie do wielu
 lokalizacji w sieci LAN, przyk³adowo do instalacji oprogramowania
 w ca³ej pracowni komputerowej za jednym razem. Przewag± UDPcast
 w porównaniu do innych sposobów (NFS, FTP czy te¿ innych) jest to,
-i¿ wykorzystuje mo¿ilwo¶æ transmisji multicast - instalacja 15
+i¿ wykorzystuje mo¿liwo¶æ transmisji multicast - instalacja 15
 stacji roboczych nie powinna zaj±æ wiêcej ni¿ 2.
 
 %prep
