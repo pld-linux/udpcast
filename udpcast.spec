@@ -1,12 +1,12 @@
 Summary:	UDPcast is a multicast file transfer tool
 Summary(pl):	UDPcast - przesy³anie plików przez multicast
 Name:		udpcast
-Version:	20050226
+Version:	20060619
 Release:	1
 License:	GPL v2 for main code, BSD-like for fec.c
 Group:		Networking
-Source0:	http://udpcast.linux.lu/current/%{name}-%{version}.tar.gz
-# Source0-md5:	8165440ba93e2b0ec8150926c3787dd1
+Source0:	http://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
+# Source0-md5:	d75202195307aa7e550a381b90541835
 Patch0:		%{name}-Makefile.patch
 URL:		http://udpcast.linux.lu/
 BuildRequires:	perl-tools-pod
@@ -29,7 +29,7 @@ i¿ wykorzystuje mo¿liwo¶æ transmisji multicast - instalacja 15
 stacji roboczych nie powinna zaj±æ wiêcej ni¿ 2.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 %patch0 -p1
 
 %build
@@ -50,3 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
+%doc Changelog.txt
