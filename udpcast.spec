@@ -8,6 +8,7 @@ Group:		Networking
 Source0:	http://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
 # Source0-md5:	e403b381ca9c8e686282d4652f3bda91
 Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-Makefile.patch
 URL:		http://udpcast.linux.lu/
 BuildRequires:	perl-tools-pod
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,15 +32,15 @@ stacji roboczych nie powinna zaj±æ wiêcej ni¿ instalacja dwóch.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure
-%{__make} \
-	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}"
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
         DESTDIR=$RPM_BUILD_ROOT
 
@@ -48,6 +49,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc Changelog.txt
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
-%doc Changelog.txt
