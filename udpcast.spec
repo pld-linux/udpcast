@@ -1,13 +1,13 @@
 Summary:	UDPcast is a multicast file transfer tool
 Summary(pl):	UDPcast - przesy³anie plików przez multicast
 Name:		udpcast
-Version:	20060619
+Version:	20060929
 Release:	1
 License:	GPL v2 for main code, BSD-like for fec.c
 Group:		Networking
 Source0:	http://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
-# Source0-md5:	d75202195307aa7e550a381b90541835
-Patch0:		%{name}-Makefile.patch
+# Source0-md5:	e403b381ca9c8e686282d4652f3bda91
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://udpcast.linux.lu/
 BuildRequires:	perl-tools-pod
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,24 +22,24 @@ it would to install just 2.
 
 %description -l pl
 UDPcast jest narzêdziem do przesy³ania danych jednocze¶nie do wielu
-lokalizacji w sieci LAN, przyk³adowo do instalacji oprogramowania
-w ca³ej pracowni komputerowej za jednym razem. Przewag± UDPcast
-w porównaniu do innych sposobów (NFS, FTP czy te¿ innych) jest to,
-i¿ wykorzystuje mo¿liwo¶æ transmisji multicast - instalacja 15
-stacji roboczych nie powinna zaj±æ wiêcej ni¿ 2.
+lokalizacji w sieci LAN, przyk³adowo do instalacji oprogramowania w
+ca³ej pracowni komputerowej za jednym razem. Przewag± UDPcast w
+porównaniu do innych sposobów (NFS, FTP czy te¿ innych) jest to, i¿
+wykorzystuje mo¿liwo¶æ transmisji multicast - instalacja piêtnastu
+stacji roboczych nie powinna zaj±æ wiêcej ni¿ instalacja dwóch.
 
 %prep
 %setup -q
 %patch0 -p1
 
 %build
+%configure
 %{__make} \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
         DESTDIR=$RPM_BUILD_ROOT
 
