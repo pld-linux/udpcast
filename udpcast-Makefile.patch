@@ -1,11 +1,11 @@
---- udpcast-20060929/Makefile.in.orig	2006-10-29 12:41:08.227943000 +0100
-+++ udpcast-20060929/Makefile.in	2006-10-29 12:43:26.848607000 +0100
+--- u/Makefile.in.orig	2007-02-08 20:39:28.416109157 +0000
++++ u/Makefile.in	2007-02-08 20:54:05.846828596 +0000
 @@ -31,7 +31,7 @@
  
  
  #override CFLAGS += -O4 -Wall -DNDEBUG -DLOSSTEST
 -override CFLAGS +=-Wall -Wshadow -DBB_FEATURE_UDPCAST_FEC -D_FILE_OFFSET_BITS=64 -DUSE_SYSLOG -DUSE_ASSEMBLER -O6
 +override CFLAGS +=-Wall -Wshadow -DBB_FEATURE_UDPCAST_FEC -D_FILE_OFFSET_BITS=64 -DUSE_SYSLOG -DUSE_ASSEMBLER
- override LDFLAGS +=-s -Wl,-warn-common
+ override LDFLAGS +=-s
  LIBS +=@LIBS@
  
