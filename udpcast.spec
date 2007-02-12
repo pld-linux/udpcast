@@ -1,5 +1,5 @@
 Summary:	UDPcast is a multicast file transfer tool
-Summary(pl.UTF-8):   UDPcast - przesyłanie plików przez multicast
+Summary(pl.UTF-8):	UDPcast - przesyłanie plików przez multicast
 Name:		udpcast
 Version:	20070205
 Release:	1
