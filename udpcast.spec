@@ -1,5 +1,5 @@
 Summary:	UDPcast is a multicast file transfer tool
-Summary(pl.UTF-8):	UDPcast - przesyÅ‚anie plikÃ³w przez multicast
+Summary(pl):	UDPcast - przesy³anie plików przez multicast
 Name:		udpcast
 Version:	20070218
 Release:	1
@@ -21,13 +21,13 @@ other methods (NFS, FTP, whatever) is that UDPcast uses Ethernet's
 multicast abilities: it won't take longer to install 15 machines than
 it would to install just 2.
 
-%description -l pl.UTF-8
-UDPcast jest narzÄ™dziem do przesyÅ‚ania danych jednoczeÅ›nie do wielu
-lokalizacji w sieci LAN, przykÅ‚adowo do instalacji oprogramowania w
-caÅ‚ej pracowni komputerowej za jednym razem. PrzewagÄ… UDPcast w
-porÃ³wnaniu do innych sposobÃ³w (NFS, FTP czy teÅ¼ innych) jest to, iÅ¼
-wykorzystuje moÅ¼liwoÅ›Ä‡ transmisji multicast - instalacja piÄ™tnastu
-stacji roboczych nie powinna zajÄ…Ä‡ wiÄ™cej niÅ¼ instalacja dwÃ³ch.
+%description -l pl
+UDPcast jest narzêdziem do przesy³ania danych jednocze¶nie do wielu
+lokalizacji w sieci LAN, przyk³adowo do instalacji oprogramowania w
+ca³ej pracowni komputerowej za jednym razem. Przewag± UDPcast w
+porównaniu do innych sposobów (NFS, FTP czy te¿ innych) jest to, i¿
+wykorzystuje mo¿liwo¶æ transmisji multicast - instalacja piêtnastu
+stacji roboczych nie powinna zaj±æ wiêcej ni¿ instalacja dwóch.
 
 %prep
 %setup -q
