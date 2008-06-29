@@ -8,7 +8,9 @@ Group:		Networking
 Source0:	http://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
 # Source0-md5:	064cfdbcdfe5f18552835ae88e3211f1
 Patch0:		%{name}-Makefile.patch
+Patch1:		%{name}-configure.patch
 URL:		http://udpcast.linux.lu/
+BuildRequires:  autoconf >= 2.58
 BuildRequires:	perl-tools-pod
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,8 +33,10 @@ stacji roboczych nie powinna zająć więcej niż instalacja dwóch.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
+%{__autoconf}
 %configure
 %{__make}
 
