@@ -10,7 +10,7 @@ Source0:	http://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-configure.patch
 URL:		http://udpcast.linux.lu/
-BuildRequires:  autoconf >= 2.58
+BuildRequires:	autoconf >= 2.58
 BuildRequires:	perl-tools-pod
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
