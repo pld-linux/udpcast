@@ -1,12 +1,12 @@
-diff -urN udpcast-20071228.orig/Makefile.in udpcast-20071228/Makefile.in
---- udpcast-20071228.orig/Makefile.in	2007-12-26 23:14:27.000000000 +0100
-+++ udpcast-20071228/Makefile.in	2008-02-02 16:29:57.211474115 +0100
+diff -urN udpcast-20081213/Makefile.in.orig udpcast-20081213/Makefile.in
+--- udpcast-20081213/Makefile.in.orig	2008-11-16 17:36:25.000000000 +0000
++++ udpcast-20081213/Makefile.in	2009-03-03 12:58:40.496625476 +0000
 @@ -30,7 +30,7 @@
  
- 
- #override CFLAGS += -O4 -Wall -DNDEBUG -DLOSSTEST
--override CFLAGS +=-Wall -Wstrict-prototypes -Wshadow -DBB_FEATURE_UDPCAST_FEC -D_FILE_OFFSET_BITS=64 -DUSE_SYSLOG -DUSE_ASSEMBLER -O6
-+override CFLAGS +=-Wall -Wstrict-prototypes -Wshadow -DBB_FEATURE_UDPCAST_FEC -D_FILE_OFFSET_BITS=64 -DUSE_SYSLOG -DUSE_ASSEMBLER 
- override LDFLAGS +=-s
+ # For additional warnings & checks, add -Wstrict-prototypes -Wshadow to the
+ # following:
+-CFLAGS +=-Wall -DBB_FEATURE_UDPCAST_FEC -D_FILE_OFFSET_BITS=64 -DUSE_SYSLOG -DUSE_ASSEMBLER -O6
++CFLAGS +=-Wall -DBB_FEATURE_UDPCAST_FEC -D_FILE_OFFSET_BITS=64 -DUSE_SYSLOG -DUSE_ASSEMBLER
+ LDFLAGS +=-s
  LIBS +=@LIBS@
  
