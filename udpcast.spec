@@ -29,6 +29,18 @@ porównaniu do innych sposobów (NFS, FTP czy też innych) jest to, iż
 wykorzystuje możliwość transmisji multicast - instalacja piętnastu
 stacji roboczych nie powinna zająć więcej niż instalacja dwóch.
 
+%package devel
+Summary:	Header file for rateGovernor plugins
+Summary(pl.UTF-8):	Plik nagłówkowy do tworzenia wtyczek rateGovernora
+Group:		Development/Libraries
+# doesn't require base
+
+%description devel
+Header file for rateGovernor plugins.
+
+%description devel -l pl.UTF-8
+Plik nagłówkowy do tworzenia wtyczek rateGovernora.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -51,5 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changelog.txt
 %attr(755,root,root) %{_sbindir}/*
-%{_includedir}/udpcast
 %{_mandir}/man1/*
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/udpcast
