@@ -1,12 +1,12 @@
 Summary:	UDPcast is a multicast file transfer tool
 Summary(pl.UTF-8):	UDPcast - przesyłanie plików przez multicast
 Name:		udpcast
-Version:	20081213
-Release:	2
+Version:	20100130
+Release:	1
 License:	GPL v2 for main code, BSD-like for fec.c
 Group:		Networking
 Source0:	http://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
-# Source0-md5:	23f3371cb60a1f66f6be12fa98d4d5ca
+# Source0-md5:	f9ad942dfe3ecbd2da5d91479957e5a9
 Patch0:		%{name}-Makefile.patch
 URL:		http://udpcast.linux.lu/
 BuildRequires:	autoconf >= 2.58
@@ -54,7 +54,7 @@ Plik nagłówkowy do tworzenia wtyczek rateGovernora.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-        DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,8 +62,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changelog.txt
-%attr(755,root,root) %{_sbindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_sbindir}/udp-*e*er
+%{_mandir}/man1/udp-*e*er.1*
 
 %files devel
 %defattr(644,root,root,755)
