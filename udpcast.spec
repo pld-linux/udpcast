@@ -1,15 +1,13 @@
 Summary:	UDPcast is a multicast file transfer tool
 Summary(pl.UTF-8):	UDPcast - przesyłanie plików przez multicast
 Name:		udpcast
-Version:	20120424
-Release:	2
+Version:	20250223
+Release:	1
 License:	GPL v2 for main code, BSD-like for fec.c
 Group:		Networking
-Source0:	http://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
-# Source0-md5:	b9b67a577ca5659a93bcb9e43f298fb2
-Patch0:		%{name}-Makefile.patch
-Patch1:		%{name}-include.patch
-URL:		http://udpcast.linux.lu/
+Source0:	https://www.udpcast.linux.lu/download/%{name}-%{version}.tar.gz
+# Source0-md5:	734bc4f8dc481274301b0bbecd291e87
+URL:		https://www.udpcast.linux.lu/
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	perl-tools-pod
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,8 +42,6 @@ Plik nagłówkowy do tworzenia wtyczek rateGovernora.
 
 %prep
 %setup -q
-%patch -P0 -p1
-%patch -P1 -p1
 
 %build
 %{__autoconf}
